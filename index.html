@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinite Scroll Photo Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Infinite Scroll Photo Gallery</h1>
+    <input type="text" id="searchInput" placeholder="Search photos...">
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h2>Collections</h2>
+        <button class="collection" data-query="nature">Nature</button>
+        <button class="collection" data-query="architecture">Architecture</button>
+        <button class="collection" data-query="travel">Travel</button>
+        <button class="collection" data-query="food">Food</button>
+        <button class="collection" data-query="animals">Animals</button>
+        <button class="collection" data-query="technology">Technology</button>
+    </aside>
+
+    <main>
+        <div id="gallery" class="gallery"></div>
+
+        <div id="loader" class="loader hidden">Loading...</div>
+        <div id="empty" class="empty hidden">No photos found</div>
+        <div id="error" class="error hidden">
+            Failed to load images. Check API key or network.
+            <button id="retryBtn">Retry</button>
+        </div>
+
+        <div id="sentinel"></div>
+    </main>
+
+</div>
+
+<div id="lightbox" class="lightbox hidden">
+    <span id="closeBtn">&times;</span>
+    <img id="lightboxImg" alt="Preview">
+    <div id="photoDetails"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

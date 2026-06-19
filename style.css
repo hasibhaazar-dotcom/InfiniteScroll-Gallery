@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#081b3a;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:20px;
+    background:#102d63;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+header h1{
+    margin-bottom:15px;
+}
+
+header input{
+    width:300px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+}
+
+.container{
+    display:flex;
+}
+
+.sidebar{
+    width:220px;
+    padding:20px;
+    background:#102858;
+    min-height:100vh;
+}
+
+.sidebar button{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:none;
+    border-radius:8px;
+    background:#1f4dbd;
+    color:white;
+    cursor:pointer;
+}
+
+.sidebar button:hover{
+    background:#2d66f0;
+}
+
+main{
+    flex:1;
+    padding:20px;
+}
+
+.gallery{
+    column-count:4;
+    column-gap:15px;
+}
+
+.card{
+    break-inside:avoid;
+    margin-bottom:15px;
+    overflow:hidden;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.card img{
+    width:100%;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.card img:hover{
+    transform:scale(1.03);
+}
+
+.loader,.empty,.error{
+    text-align:center;
+    padding:20px;
+    font-size:18px;
+}
+
+.hidden{
+    display:none;
+}
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.lightbox img{
+    max-width:80%;
+    max-height:80%;
+    border-radius:10px;
+}
+
+#photoDetails{
+    margin-top:20px;
+    text-align:center;
+}
+
+#closeBtn{
+    position:absolute;
+    top:20px;
+    right:40px;
+    font-size:40px;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+    .gallery{column-count:3;}
+}
+
+@media(max-width:700px){
+    .container{flex-direction:column;}
+    .sidebar{
+        width:100%;
+        min-height:auto;
+        display:flex;
+        overflow-x:auto;
+        gap:10px;
+    }
+    .gallery{column-count:2;}
+}
+
+@media(max-width:500px){
+    .gallery{column-count:1;}
+}
